@@ -8,7 +8,6 @@ defmodule Tetris.Brick do
       rotation: 90,
       reflection: true 
     }
-    
   end
   def toggle(true) do
     false
@@ -21,17 +20,11 @@ defmodule Tetris.Brick do
     %{brick| reflection: toggle(brick.reflection)}
   end
   
-  def turn(90) do
-    180
-  end
-  def turn(180) do
-    270
-  end
-  def turn(270) do
+  def turn(270)  do
     0
   end
-  def turn(0) do
-    90
+  def turn(degrees) do
+    degrees + 90
   end
   
   def rotate(brick) do
